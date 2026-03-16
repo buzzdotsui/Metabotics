@@ -24,6 +24,16 @@ export default function Navbar() {
     setMenuOpen(false)
   }, [location])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open')
+    } else {
+      document.body.classList.remove('menu-open')
+    }
+    return () => document.body.classList.remove('menu-open')
+  }, [menuOpen])
+
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
       <div className="container">
