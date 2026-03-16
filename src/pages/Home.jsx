@@ -1,6 +1,21 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import DashboardDemo from '../components/DashboardDemo'
 
 export default function Home() {
+  const [dynamicText, setDynamicText] = useState('Metallurgical')
+  const [showDemo, setShowDemo] = useState(false)
+  
+  useEffect(() => {
+    const words = ['Metallurgical', 'Heat Treatment', 'Foundries', 'Mining']
+    let i = 0
+    const interval = setInterval(() => {
+      i = (i + 1) % words.length
+      setDynamicText(words[i])
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       {/* ====== 1. HERO ====== */}
@@ -18,14 +33,14 @@ export default function Home() {
           <div className="particle"></div>
         </div>
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content glass-panel">
             <div className="hero-badge">
               <span className="badge-dot"></span>
               Building the Future of Smart Manufacturing
             </div>
             <h1>
               Intelligent Automation for{' '}
-              <span className="text-gradient">Metallurgical</span> &amp;{' '}
+              <span className="text-gradient dynamic-text">{dynamicText}</span> &amp;{' '}
               <span className="text-gradient">Materials Processing</span>
             </h1>
             <p className="hero-subtitle">
@@ -36,20 +51,24 @@ export default function Home() {
               <Link to="/technology" className="btn btn-primary" id="hero-cta-tech">
                 See Our Technology →
               </Link>
-              <Link to="/contact" className="btn btn-secondary" id="hero-cta-partner">
-                Partner With Us
-              </Link>
+              <button 
+                className="btn btn-secondary play-demo-btn" 
+                id="hero-cta-demo"
+                onClick={() => setShowDemo(true)}
+              >
+                <span className="play-icon">▶</span> Play Demo
+              </button>
             </div>
             <div className="hero-stats">
-              <div className="hero-stat">
+              <div className="hero-stat animate-fade-up animate-delay-3">
                 <h4>Industry 4.0</h4>
                 <p>Ready Solutions</p>
               </div>
-              <div className="hero-stat">
+              <div className="hero-stat animate-fade-up animate-delay-4">
                 <h4>AI-Powered</h4>
                 <p>Process Intelligence</p>
               </div>
-              <div className="hero-stat">
+              <div className="hero-stat animate-fade-up animate-delay-5">
                 <h4>Africa-First</h4>
                 <p>Industrial Innovation</p>
               </div>
@@ -467,6 +486,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ====== 12. DEMO MODAL ====== */}
+      <div className={`demo-modal-overlay ${showDemo ? 'open' : ''}`} onClick={() => setShowDemo(false)}>
+        <div className="demo-modal-content" onClick={e => e.stopPropagation()}>
+          <button className="demo-close-btn" onClick={() => setShowDemo(false)}>
+            ✕
+          </button>
+          <div className="demo-video-wrapper" style={{ paddingBottom: '0', height: '100%', minHeight: '400px', background: 'var(--bg-primary)' }}>
+            <DashboardDemo />
+          </div>
+        </div>
+      </div>
     </>
   )
 }

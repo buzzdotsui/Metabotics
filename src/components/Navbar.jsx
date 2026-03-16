@@ -12,6 +12,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false)
+    setDropdownOpen(false)
   }, [location])
 
   // Lock body scroll when mobile menu is open
@@ -35,37 +37,75 @@ export default function Navbar() {
   }, [menuOpen])
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
-      <div className="container">
-        <Link to="/" className="navbar-logo">
-          <div className="logo-icon">M</div>
-          <span>METABOTICS</span>
-        </Link>
-
-        <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
-          {navLinks.map(link => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={location.pathname === link.path ? 'active' : ''}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link to="/contact" className="navbar-cta">Contact</Link>
+    <>
+      <div className={`announcement-bar ${scrolled ? 'hide' : ''}`}>
+        <div className="container announcement-content">
+          <span className="announcement-badge">NEW</span>
+          <p>Introducing Metabotics AI-Driven Furnace Control v2.0</p>
+          <Link to="/technology" className="announcement-link">Learn More →</Link>
         </div>
-
-        <button
-          className={`hamburger${menuOpen ? ' open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          id="hamburger-btn"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-    </nav>
+      
+      <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
+        <div className="container">
+          <Link to="/" className="navbar-logo">
+            <div className="logo-icon">M</div>
+            <span>METABOTICS</span>
+          </Link>
+
+          <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
+            {navLinks.map(link => {
+              if (link.label === 'Applications') {
+                return (
+                  <div 
+                    key={link.path} 
+                    className="dropdown-container"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <button 
+                      className={`dropdown-trigger ${location.pathname.includes('/applications') ? 'active' : ''}`}
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                    >
+                      {link.label} <span className="dropdown-arrow">▼</span>
+                    </button>
+                    <div className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                      <Link to="/applications#steel">Steel & Foundries</Link>
+                      <Link to="/applications#heat-treatment">Heat Treatment</Link>
+                      <Link to="/applications#mining">Mining & Materials</Link>
+                      <Link to="/applications#energy">Energy Intensive</Link>
+                      <div className="dropdown-divider"></div>
+                      <Link to="/applications" className="dropdown-all">View All Applications</Link>
+                    </div>
+                  </div>
+                )
+              }
+              
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={location.pathname === link.path ? 'active' : ''}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+            <Link to="/contact" className="navbar-cta">Contact</Link>
+          </div>
+
+          <button
+            className={`hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            id="hamburger-btn"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </>
   )
 }
