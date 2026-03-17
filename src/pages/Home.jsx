@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import DashboardDemo from '../components/DashboardDemo'
+import { Activity, Zap, TrendingDown, Trash2, Users, Radio, Brain, Settings, HardDrive, Monitor, Link as LinkIcon, Factory, Flame, Pickaxe, Thermometer, Globe, Cpu, Droplet, Rocket, Briefcase, TestTube, Banknote } from 'lucide-react'
 
 export default function Home() {
   const [dynamicText, setDynamicText] = useState('Metallurgical')
-  const [showDemo, setShowDemo] = useState(false)
   
   useEffect(() => {
     const words = ['Metallurgical', 'Heat Treatment', 'Foundries', 'Mining']
@@ -51,13 +50,6 @@ export default function Home() {
               <Link to="/technology" className="btn btn-primary" id="hero-cta-tech">
                 See Our Technology →
               </Link>
-              <button 
-                className="btn btn-secondary play-demo-btn" 
-                id="hero-cta-demo"
-                onClick={() => setShowDemo(true)}
-              >
-                <span className="play-icon">▶</span> Play Demo
-              </button>
             </div>
             <div className="hero-stats">
               <div className="hero-stat animate-fade-up animate-delay-3">
@@ -96,11 +88,11 @@ export default function Home() {
               </p>
               <div className="problem-list">
                 {[
-                  { icon: '📡', title: 'Limited Real-Time Monitoring', desc: 'Critical parameters go untracked for hours' },
-                  { icon: '⚡', title: 'Massive Energy Waste', desc: 'Inefficient heating cycles burn resources' },
-                  { icon: '📉', title: 'Process Instability', desc: 'Inconsistent outputs and uncontrolled variables' },
-                  { icon: '🗑️', title: 'High Scrap Rates', desc: 'Defective products from poor process control' },
-                  { icon: '👷', title: 'Manual Decision Making', desc: 'Operators rely on experience over data' },
+                  { icon: <Activity className="w-6 h-6" />, title: 'Limited Real-Time Monitoring', desc: 'Critical parameters go untracked for hours' },
+                  { icon: <Zap className="w-6 h-6" />, title: 'Massive Energy Waste', desc: 'Inefficient heating cycles burn resources' },
+                  { icon: <TrendingDown className="w-6 h-6" />, title: 'Process Instability', desc: 'Inconsistent outputs and uncontrolled variables' },
+                  { icon: <Trash2 className="w-6 h-6" />, title: 'High Scrap Rates', desc: 'Defective products from poor process control' },
+                  { icon: <Users className="w-6 h-6" />, title: 'Manual Decision Making', desc: 'Operators rely on experience over data' },
                 ].map((item, i) => (
                   <div className="problem-item" key={i}>
                     <div className="problem-item-icon">{item.icon}</div>
@@ -135,21 +127,21 @@ export default function Home() {
           <div className="solution-grid">
             {[
               {
-                icon: '📡',
+                icon: <Radio className="w-10 h-10" />,
                 color: '',
                 title: 'Smart Monitoring',
                 desc: 'Industrial-grade sensors capturing critical process data in real-time.',
                 items: ['Temperature profiles', 'Vibration analysis', 'Furnace atmosphere', 'Material behavior'],
               },
               {
-                icon: '🧠',
+                icon: <Brain className="w-10 h-10" />,
                 color: 'card-icon-orange',
                 title: 'AI Process Intelligence',
                 desc: 'ML algorithms that analyze conditions and predict outcomes.',
                 items: ['Failure prediction', 'Inefficiency detection', 'Optimal parameter tuning', 'Quality forecasting'],
               },
               {
-                icon: '⚙️',
+                icon: <Settings className="w-10 h-10" />,
                 color: '',
                 title: 'Autonomous Control',
                 desc: 'Systems that automatically adjust processes for optimal results.',
@@ -182,25 +174,25 @@ export default function Home() {
           <div className="tech-grid">
             {[
               {
-                icon: '🔧',
-                title: 'HARDWARE',
+                icon: <HardDrive className="w-8 h-8" />,
+                title: 'DATA INGESTION',
                 bg: 'var(--accent-cyan-dim)',
                 color: 'var(--accent-cyan)',
-                items: ['Industrial sensors', 'Edge computing devices', 'Industrial controllers', 'Custom PCB modules'],
+                items: ['Hardware-agnostic APIs', 'Edge computing agents', 'Legacy SCADA integration', 'IoT protocol parsing'],
               },
               {
-                icon: '💻',
-                title: 'SOFTWARE',
+                icon: <Monitor className="w-8 h-8" />,
+                title: 'INTELLIGENCE',
                 bg: 'var(--accent-orange-dim)',
                 color: 'var(--accent-orange)',
-                items: ['Data acquisition systems', 'Machine learning models', 'Digital twin engines', 'Real-time dashboards'],
+                items: ['Time-series databases', 'Machine learning prediction', 'Digital twin modeling', 'Anomaly detection'],
               },
               {
-                icon: '🔗',
-                title: 'INTEGRATION',
+                icon: <LinkIcon className="w-8 h-8" />,
+                title: 'ACTION & CONTROL',
                 bg: 'rgba(139, 92, 246, 0.15)',
                 color: 'var(--accent-purple)',
-                items: ['SCADA systems', 'Industrial IoT protocols', 'Predictive maintenance', 'Cloud analytics'],
+                items: ['Real-time dashboards', 'Automated alerts', 'Predictive maintenance', 'Control system webhooks'],
               },
             ].map((cat, i) => (
               <div className="card tech-category" key={i}>
@@ -232,10 +224,10 @@ export default function Home() {
           </div>
           <div className="applications-grid">
             {[
-              { icon: '🏭', bg: 'var(--accent-orange-dim)', color: 'var(--accent-orange)', title: 'Steel & Foundries', desc: 'Optimize furnace operations, reduce energy waste, and improve casting quality through real-time monitoring and AI-driven control.' },
-              { icon: '🔥', bg: 'var(--accent-cyan-dim)', color: 'var(--accent-cyan)', title: 'Heat Treatment Plants', desc: 'Control material microstructure precisely with intelligent heating and cooling cycles. Achieve consistent metallurgical properties.' },
-              { icon: '⛏️', bg: 'rgba(139, 92, 246, 0.15)', color: 'var(--accent-purple)', title: 'Mining & Materials Processing', desc: 'Improve yield and reduce waste through predictive analytics and automated process adjustments in mineral processing operations.' },
-              { icon: '🌡️', bg: 'rgba(16, 185, 129, 0.15)', color: 'var(--accent-green)', title: 'Energy-Intensive Industries', desc: 'Monitor and optimize high-temperature operations to reduce energy consumption and carbon footprint across industrial processes.' },
+              { icon: <Factory className="w-8 h-8" />, bg: 'var(--accent-orange-dim)', color: 'var(--accent-orange)', title: 'Steel & Foundries', desc: 'Optimize furnace operations, reduce energy waste, and improve casting quality through real-time monitoring and AI-driven control.' },
+              { icon: <Flame className="w-8 h-8" />, bg: 'var(--accent-cyan-dim)', color: 'var(--accent-cyan)', title: 'Heat Treatment Plants', desc: 'Control material microstructure precisely with intelligent heating and cooling cycles. Achieve consistent metallurgical properties.' },
+              { icon: <Pickaxe className="w-8 h-8" />, bg: 'rgba(139, 92, 246, 0.15)', color: 'var(--accent-purple)', title: 'Mining & Materials Processing', desc: 'Improve yield and reduce waste through predictive analytics and automated process adjustments in mineral processing operations.' },
+              { icon: <Thermometer className="w-8 h-8" />, bg: 'rgba(16, 185, 129, 0.15)', color: 'var(--accent-green)', title: 'Energy-Intensive Industries', desc: 'Monitor and optimize high-temperature operations to reduce energy consumption and carbon footprint across industrial processes.' },
             ].map((app, i) => (
               <div className="card application-card" key={i}>
                 <div className="app-icon" style={{ background: app.bg, color: app.color }}>{app.icon}</div>
@@ -273,54 +265,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== 7. PILOT PROJECTS ====== */}
-      <section className="section section-alt" id="pilot-section">
+      {/* ====== 7. PLATFORM ARCHITECTURE ====== */}
+      <section className="section section-alt" id="platform-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">PILOT PROJECTS</span>
-            <h2>From <span className="text-gradient">Concept</span> to Prototype</h2>
-            <p>Real systems solving real industrial challenges.</p>
+            <span className="section-label">PLATFORM ARCHITECTURE</span>
+            <h2>Intelligent <span className="text-gradient">Data Pipeline</span></h2>
+            <p>A pure software approach to complex industrial automation.</p>
           </div>
           <div className="pilot-grid">
             <div className="pilot-visual">
               <div className="pilot-visual-header">
                 <span className="status-dot"></span>
-                <span>SYSTEM ACTIVE</span>
+                <span>SYSTEM SIMULATION</span>
               </div>
               <div className="pilot-metrics">
                 <div className="pilot-metric">
-                  <div className="metric-value">1,247°C</div>
-                  <div className="metric-label">Current Temp</div>
+                  <div className="metric-value">ML</div>
+                  <div className="metric-label">Prediction Engine</div>
                 </div>
                 <div className="pilot-metric">
-                  <div className="metric-value">98.2%</div>
-                  <div className="metric-label">Uptime</div>
+                  <div className="metric-value">API</div>
+                  <div className="metric-label">Integration Layer</div>
                 </div>
                 <div className="pilot-metric">
-                  <div className="metric-value">0</div>
-                  <div className="metric-label">Active Alerts</div>
+                  <div className="metric-value">IoT</div>
+                  <div className="metric-label">Data Ingestion</div>
                 </div>
                 <div className="pilot-metric">
-                  <div className="metric-value">12ms</div>
-                  <div className="metric-label">Response Time</div>
+                  <div className="metric-value">Db</div>
+                  <div className="metric-label">Time-Series Data</div>
                 </div>
               </div>
             </div>
             <div>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '8px' }}>
-                Automatic Furnace Monitoring System
+                Scalable Software Architecture
               </h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '28px', lineHeight: 1.8 }}>
-                Our first prototype demonstrates the core capabilities of the Metabotics platform
-                in a real-world furnace monitoring scenario.
+                Our platform is designed as a highly scalable software-as-a-service solution, 
+                capable of ingesting massive amounts of process data and applying advanced ML models.
               </p>
               <div className="pilot-features">
                 {[
-                  'Real-time temperature tracking and logging',
-                  'Remote alerts via SMS and dashboard',
-                  'Predictive overheating detection using ML',
-                  'Historical trend analysis and reporting',
-                  'Edge computing for low-latency processing',
+                  'Hardware-agnostic API integration',
+                  'High-throughput time-series database',
+                  'Custom ML models for process optimization',
+                  'Real-time analytics and alerting engine',
+                  'Secure, cloud-native deployment',
                 ].map((feat, i) => (
                   <div className="pilot-feature" key={i}>
                     <div className="feature-check">✓</div>
@@ -347,9 +339,9 @@ export default function Home() {
             </p>
             <div className="vision-goals">
               {[
-                { icon: '🏗️', title: 'Autonomous Factories', desc: 'Self-managing production facilities driven by AI and IoT' },
-                { icon: '🔬', title: 'Digital Twins', desc: 'Virtual replicas of metallurgical processes for simulation and optimization' },
-                { icon: '🤖', title: 'AI-Optimized Plants', desc: 'Production facilities that learn and improve with every cycle' },
+                { icon: <Factory className="w-8 h-8" />, title: 'Autonomous Factories', desc: 'Self-managing production facilities driven by AI and IoT' },
+                { icon: <Cpu className="w-8 h-8" />, title: 'Digital Twins', desc: 'Virtual replicas of metallurgical processes for simulation and optimization' },
+                { icon: <Brain className="w-8 h-8" />, title: 'AI-Optimized Plants', desc: 'Production facilities that learn and improve with every cycle' },
               ].map((goal, i) => (
                 <div className="card vision-goal" key={i}>
                   <div className="goal-icon">{goal.icon}</div>
@@ -398,18 +390,18 @@ export default function Home() {
           </div>
           <div className="research-grid">
             {[
-              { emoji: '🏭', tag: 'INDUSTRY 4.0', title: 'The Future of Industry 4.0 in African Metallurgy', desc: 'How smart manufacturing technologies are reshaping industrial operations across the continent.' },
-              { emoji: '🔥', tag: 'SMART FURNACES', title: 'Smart Furnaces: AI-Driven Temperature Control', desc: 'Exploring how machine learning algorithms can predict and prevent furnace failures.' },
-              { emoji: '🌐', tag: 'INDUSTRIAL IOT', title: 'Industrial IoT Architecture for Harsh Environments', desc: 'Designing robust sensor networks for extreme temperature and vibration conditions.' },
+              { slug: 'future-of-industry-4-0', emoji: <Factory className="w-12 h-12" />, tag: 'INDUSTRY 4.0', title: 'The Future of Industry 4.0 in African Metallurgy', desc: 'How smart manufacturing technologies are reshaping industrial operations across the continent.' },
+              { slug: 'smart-furnaces', emoji: <Flame className="w-12 h-12" />, tag: 'SMART FURNACES', title: 'Smart Furnaces: AI-Driven Temperature Control', desc: 'Exploring how machine learning algorithms can predict and prevent furnace failures.' },
+              { slug: 'industrial-iot-architecture', emoji: <Globe className="w-12 h-12" />, tag: 'INDUSTRIAL IOT', title: 'Industrial IoT Architecture for Harsh Environments', desc: 'Designing robust sensor networks for extreme temperature and vibration conditions.' },
             ].map((article, i) => (
-              <div className="card research-card" key={i}>
+              <Link to={`/research/${article.slug}`} className="card research-card" key={i} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
                 <div className="research-card-image">{article.emoji}</div>
                 <div className="research-card-body">
                   <span className="tag">{article.tag}</span>
                   <h3>{article.title}</h3>
                   <p>{article.desc}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
@@ -436,10 +428,10 @@ export default function Home() {
               </p>
               <div className="contact-types">
                 {[
-                  { icon: '🏭', label: 'Industrial Partnerships' },
-                  { icon: '🧪', label: 'Pilot Projects' },
-                  { icon: '🔬', label: 'Research Collaborations' },
-                  { icon: '💰', label: 'Investment Opportunities' },
+                  { icon: <Factory className="w-5 h-5" />, label: 'Industrial Partnerships' },
+                  { icon: <TestTube className="w-5 h-5" />, label: 'Pilot Projects' },
+                  { icon: <Briefcase className="w-5 h-5" />, label: 'Research Collaborations' },
+                  { icon: <Banknote className="w-5 h-5" />, label: 'Investment Opportunities' },
                 ].map((type, i) => (
                   <div className="contact-type" key={i}>
                     <div className="contact-type-icon">{type.icon}</div>
@@ -487,17 +479,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== 12. DEMO MODAL ====== */}
-      <div className={`demo-modal-overlay ${showDemo ? 'open' : ''}`} onClick={() => setShowDemo(false)}>
-        <div className="demo-modal-content" onClick={e => e.stopPropagation()}>
-          <button className="demo-close-btn" onClick={() => setShowDemo(false)}>
-            ✕
-          </button>
-          <div className="demo-video-wrapper" style={{ paddingBottom: '0', height: '100%', minHeight: '400px', background: 'var(--bg-primary)' }}>
-            <DashboardDemo />
-          </div>
-        </div>
-      </div>
     </>
   )
 }

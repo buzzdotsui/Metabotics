@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Globe, Target, Leaf, Users, Ruler, Unlock, Rocket } from 'lucide-react'
 
 export default function About() {
   return (
@@ -40,7 +41,9 @@ export default function About() {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div className="card" style={{ padding: '40px', textAlign: 'center', maxWidth: '360px' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🌍</div>
+                <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+                  <Globe className="w-12 h-12 text-accent-cyan" />
+                </div>
                 <h3 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>Africa-First Innovation</h3>
                 <p>Building technology for the unique challenges and opportunities of industrial operations in emerging markets.</p>
               </div>
@@ -58,12 +61,12 @@ export default function About() {
           </div>
           <div className="grid-3">
             {[
-              { icon: '🎯', title: 'Engineering Excellence', desc: 'We build industrial-grade systems that work in real-world conditions, not lab demos.' },
-              { icon: '🌱', title: 'Sustainable Industry', desc: 'Reducing energy waste and emissions through intelligent process optimization.' },
-              { icon: '🤝', title: 'Collaborative Innovation', desc: 'Partnering with industry and academia to push the boundaries of what\'s possible.' },
-              { icon: '📐', title: 'Rigorous Science', desc: 'Every algorithm and system design is grounded in metallurgical science and engineering principles.' },
-              { icon: '🔓', title: 'Accessible Technology', desc: 'Making advanced automation affordable and practical for operations of all sizes.' },
-              { icon: '🚀', title: 'Bold Vision', desc: 'Thinking big about the future of manufacturing while executing with discipline and precision.' },
+              { icon: <Target className="w-8 h-8" />, title: 'Engineering Excellence', desc: 'We build industrial-grade systems that work in real-world conditions, not lab demos.' },
+              { icon: <Leaf className="w-8 h-8" />, title: 'Sustainable Industry', desc: 'Reducing energy waste and emissions through intelligent process optimization.' },
+              { icon: <Users className="w-8 h-8" />, title: 'Collaborative Innovation', desc: 'Partnering with industry and academia to push the boundaries of what\'s possible.' },
+              { icon: <Ruler className="w-8 h-8" />, title: 'Rigorous Science', desc: 'Every algorithm and system design is grounded in metallurgical science and engineering principles.' },
+              { icon: <Unlock className="w-8 h-8" />, title: 'Accessible Technology', desc: 'Making advanced automation affordable and practical for operations of all sizes.' },
+              { icon: <Rocket className="w-8 h-8" />, title: 'Bold Vision', desc: 'Thinking big about the future of manufacturing while executing with discipline and precision.' },
             ].map((val, i) => (
               <div className="card" key={i}>
                 <div className="card-icon">{val.icon}</div>
@@ -114,12 +117,12 @@ export default function About() {
           </div>
           <div className="timeline">
             {[
-              { year: '2024', title: 'Idea Born', desc: 'Identified the automation gap in African metallurgical operations during university research.' },
-              { year: '2025 Q1', title: 'Research Phase', desc: 'Deep-dive into industrial IoT, ML for process control, and sensor technologies for extreme environments.' },
-              { year: '2025 Q2', title: 'Metabotics Founded', desc: 'Formally established the company with a mission to build intelligent industrial automation for Africa.' },
-              { year: '2025 Q3', title: 'First Prototype', desc: 'Built the Automatic Furnace Monitoring System — real-time temperature tracking with predictive alerts.' },
-              { year: '2026', title: 'Platform Development', desc: 'Building the full Metabotics platform — from sensor to AI to autonomous control.' },
-              { year: 'NEXT', title: 'Pilot Deployments', desc: 'First industrial pilot projects with partner foundries and heat treatment plants in Nigeria.' },
+              { year: '2026 Q1', title: 'Metabotics Founded', desc: 'Formally established the company as a pure software venture to build intelligent industrial platforms.' },
+              { year: '2026 Q2', title: 'Architecture Design', desc: 'Developing the core data ingestion pipeline, API architecture, and initial ML models.' },
+              { year: '2026 Q3', title: 'Platform Alpha', desc: 'Internal testing of the cloud analytics platform and predictive maintenance algorithms.' },
+              { year: '2026 Q4', title: 'API Integration Hub', desc: 'Building seamless connectors for existing industrial SCADA and IoT sensor networks.' },
+              { year: '2027', title: 'First Partnerships', desc: 'Securing initial trial deployments with forward-thinking foundries in Nigeria.' },
+              { year: 'NEXT', title: 'Pan-African Expansion', desc: 'Scaling the platform across major metallurgical and materials processing hubs in Africa.' },
             ].map((item, i) => (
               <div className="timeline-item" key={i}>
                 <span className="year">{item.year}</span>

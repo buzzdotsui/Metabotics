@@ -38,14 +38,6 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`announcement-bar ${scrolled ? 'hide' : ''}`}>
-        <div className="container announcement-content">
-          <span className="announcement-badge">NEW</span>
-          <p>Introducing Metabotics AI-Driven Furnace Control v2.0</p>
-          <Link to="/technology" className="announcement-link">Learn More →</Link>
-        </div>
-      </div>
-      
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
         <div className="container">
           <Link to="/" className="navbar-logo">
@@ -70,10 +62,10 @@ export default function Navbar() {
                       {link.label} <span className="dropdown-arrow">▼</span>
                     </button>
                     <div className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                      <Link to="/applications#steel">Steel & Foundries</Link>
-                      <Link to="/applications#heat-treatment">Heat Treatment</Link>
-                      <Link to="/applications#mining">Mining & Materials</Link>
-                      <Link to="/applications#energy">Energy Intensive</Link>
+                      <Link to="/applications/steel-and-foundries">Steel & Foundries</Link>
+                      <Link to="/applications/heat-treatment">Heat Treatment</Link>
+                      <Link to="/applications/mining-and-materials">Mining & Materials</Link>
+                      <Link to="/applications/energy-intensive">Energy Intensive</Link>
                       <div className="dropdown-divider"></div>
                       <Link to="/applications" className="dropdown-all">View All Applications</Link>
                     </div>

@@ -1,4 +1,23 @@
 import { Link } from 'react-router-dom'
+// Replaced 'Vibrate' with 'Activity' and 'Tool' with 'Wrench'
+import {
+  Thermometer,
+  Activity,
+  Wind,
+  Cpu,
+  Zap,
+  PenTool,
+  TrendingUp,
+  Brain,
+  Orbit,
+  LayoutDashboard,
+  Bell,
+  FileText,
+  Monitor,
+  Network,
+  Wrench,
+  Cloud
+} from 'lucide-react'
 
 export default function Technology() {
   return (
@@ -45,22 +64,22 @@ export default function Technology() {
         </div>
       </section>
 
-      {/* Hardware */}
+      {/* Hardware Integration */}
       <section className="section section-alt" id="tech-hardware">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">HARDWARE LAYER</span>
-            <h2>Industrial-Grade <span className="text-gradient">Sensing</span></h2>
-            <p>Purpose-built for extreme environments — from molten metal to high-vibration zones.</p>
+            <span className="section-label">HARDWARE AGNOSTIC</span>
+            <h2>Seamless <span className="text-gradient">Sensor Integration</span></h2>
+            <p>Our software connects instantly with your existing industrial hardware in extreme environments.</p>
           </div>
           <div className="grid-3">
             {[
-              { icon: '🌡️', title: 'Temperature Sensors', desc: 'High-precision thermocouples and infrared sensors rated for 0–1800°C. Continuous monitoring with ±0.5°C accuracy.' },
-              { icon: '📳', title: 'Vibration Sensors', desc: 'MEMS accelerometers and piezoelectric sensors for detecting mechanical anomalies and predicting equipment failure.' },
-              { icon: '💨', title: 'Gas & Atmosphere Sensors', desc: 'Electrochemical and NDIR sensors for monitoring furnace atmosphere composition — O₂, CO, CO₂, and reactive gases.' },
-              { icon: '📊', title: 'Edge Computing Units', desc: 'ARM/RISC-V based industrial computers for local data processing. Sub-millisecond latency for time-critical decisions.' },
-              { icon: '🔌', title: 'Industrial Controllers', desc: 'PLC-compatible control modules that interface directly with actuators, valves, and heating elements.' },
-              { icon: '🛠️', title: 'Custom PCB Modules', desc: 'Bespoke signal conditioning and data acquisition boards designed for metallurgical sensor integration.' },
+              { icon: <Thermometer className="w-8 h-8" />, title: 'Temperature & Thermal', desc: 'Ingests data from high-precision thermocouples and infrared sensors rated up to 1800°C.' },
+              { icon: <Activity className="w-8 h-8" />, title: 'Vibration & Mechanical', desc: 'Analyzes streams from MEMS accelerometers to detect mechanical anomalies.' },
+              { icon: <Wind className="w-8 h-8" />, title: 'Gas & Atmosphere', desc: 'Processes readings from electrochemical and NDIR sensors monitoring furnace atmospheres.' },
+              { icon: <Cpu className="w-8 h-8" />, title: 'Edge Compatibility', desc: 'Deploy our lightweight ingestion agents on any ARM/RISC-V based industrial edge computer.' },
+              { icon: <Zap className="w-8 h-8" />, title: 'Controller Integration', desc: 'Communicates bi-directionally with existing PLC modules to actuate valves and heating elements.' },
+              { icon: <PenTool className="w-8 h-8" />, title: 'Custom Data Parsers', desc: 'Bespoke protocol translation for proprietary or legacy data acquisition systems.' },
             ].map((item, i) => (
               <div className="card" key={i}>
                 <div className="card-icon">{item.icon}</div>
@@ -82,12 +101,12 @@ export default function Technology() {
           </div>
           <div className="grid-3">
             {[
-              { icon: '📈', title: 'Data Acquisition', desc: 'High-throughput data ingestion pipeline handling thousands of sensor readings per second with time-series storage.' },
-              { icon: '🧠', title: 'Machine Learning Models', desc: 'LSTM networks, gradient boosting, and reinforcement learning models trained on metallurgical process data.' },
-              { icon: '🔮', title: 'Digital Twin Engine', desc: 'Physics-informed neural networks creating virtual replicas of furnaces and processing equipment for simulation.' },
-              { icon: '📊', title: 'Real-Time Dashboards', desc: 'WebSocket-powered visualization with sub-second updates. Custom views for operators, engineers, and management.' },
-              { icon: '🔔', title: 'Alert & Notification System', desc: 'Multi-channel alerting via SMS, email, and dashboard. Configurable thresholds and escalation policies.' },
-              { icon: '📋', title: 'Reporting & Analytics', desc: 'Automated shift reports, trend analysis, and compliance documentation for quality management systems.' },
+              { icon: <TrendingUp className="w-8 h-8" />, title: 'Data Acquisition', desc: 'High-throughput data ingestion pipeline handling thousands of sensor readings per second with time-series storage.' },
+              { icon: <Brain className="w-8 h-8" />, title: 'Machine Learning Models', desc: 'LSTM networks, gradient boosting, and reinforcement learning models trained on metallurgical process data.' },
+              { icon: <Orbit className="w-8 h-8" />, title: 'Digital Twin Engine', desc: 'Physics-informed neural networks creating virtual replicas of furnaces and processing equipment for simulation.' },
+              { icon: <LayoutDashboard className="w-8 h-8" />, title: 'Real-Time Dashboards', desc: 'WebSocket-powered visualization with sub-second updates. Custom views for operators, engineers, and management.' },
+              { icon: <Bell className="w-8 h-8" />, title: 'Alert & Notification System', desc: 'Multi-channel alerting via SMS, email, and dashboard. Configurable thresholds and escalation policies.' },
+              { icon: <FileText className="w-8 h-8" />, title: 'Reporting & Analytics', desc: 'Automated shift reports, trend analysis, and compliance documentation for quality management systems.' },
             ].map((item, i) => (
               <div className="card" key={i}>
                 <div className="card-icon card-icon-orange">{item.icon}</div>
@@ -109,10 +128,11 @@ export default function Technology() {
           </div>
           <div className="grid-2" style={{ maxWidth: '800px', margin: '0 auto' }}>
             {[
-              { icon: '🖥️', title: 'SCADA Systems', desc: 'OPC-UA and Modbus protocol support for seamless integration with existing SCADA infrastructure.' },
-              { icon: '🌐', title: 'Industrial IoT', desc: 'MQTT, CoAP, and HTTP APIs for connecting to cloud platforms and enterprise systems.' },
-              { icon: '🔧', title: 'Predictive Maintenance', desc: 'Condition-based monitoring that predicts failures before they happen, reducing unplanned downtime.' },
-              { icon: '☁️', title: 'Cloud Analytics', desc: 'Scalable cloud infrastructure for historical analysis, model training, and cross-facility benchmarking.' },
+              { icon: <Monitor className="w-8 h-8" />, title: 'SCADA Systems', desc: 'OPC-UA and Modbus protocol support for seamless integration with existing SCADA infrastructure.' },
+              { icon: <Network className="w-8 h-8" />, title: 'Industrial IoT', desc: 'MQTT, CoAP, and HTTP APIs for connecting to cloud platforms and enterprise systems.' },
+              // Changed from Tool to Wrench
+              { icon: <Wrench className="w-8 h-8" />, title: 'Predictive Maintenance', desc: 'Condition-based monitoring that predicts failures before they happen, reducing unplanned downtime.' },
+              { icon: <Cloud className="w-8 h-8" />, title: 'Cloud Analytics', desc: 'Scalable cloud infrastructure for historical analysis, model training, and cross-facility benchmarking.' },
             ].map((item, i) => (
               <div className="card" key={i}>
                 <div className="card-icon">{item.icon}</div>

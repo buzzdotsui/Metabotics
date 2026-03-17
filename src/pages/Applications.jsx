@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import { Factory, Flame, Pickaxe, Thermometer } from 'lucide-react'
 
 const industries = [
   {
-    icon: '🏭',
+    icon: <Factory className="w-16 h-16" />,
     bg: 'var(--accent-orange-dim)',
     color: 'var(--accent-orange)',
     title: 'Steel & Foundries',
@@ -17,7 +18,7 @@ const industries = [
     ],
   },
   {
-    icon: '🔥',
+    icon: <Flame className="w-16 h-16" />,
     bg: 'var(--accent-cyan-dim)',
     color: 'var(--accent-cyan)',
     title: 'Heat Treatment Plants',
@@ -32,7 +33,7 @@ const industries = [
     ],
   },
   {
-    icon: '⛏️',
+    icon: <Pickaxe className="w-16 h-16" />,
     bg: 'rgba(139, 92, 246, 0.15)',
     color: 'var(--accent-purple)',
     title: 'Mining & Materials Processing',
@@ -47,7 +48,7 @@ const industries = [
     ],
   },
   {
-    icon: '🌡️',
+    icon: <Thermometer className="w-16 h-16" />,
     bg: 'rgba(16, 185, 129, 0.15)',
     color: 'var(--accent-green)',
     title: 'Energy-Intensive Industries',

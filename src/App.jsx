@@ -8,6 +8,11 @@ import Applications from './pages/Applications'
 import Research from './pages/Research'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import SteelAndFoundries from './pages/SteelAndFoundries'
+import HeatTreatment from './pages/HeatTreatment'
+import MiningAndMaterials from './pages/MiningAndMaterials'
+import EnergyIntensive from './pages/EnergyIntensive'
+import ArticlePage from './pages/ArticlePage'
 
 function App() {
   return (
@@ -19,7 +24,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/applications" element={<Applications />} />
+          <Route path="/applications/steel-and-foundries" element={<SteelAndFoundries />} />
+          <Route path="/applications/heat-treatment" element={<HeatTreatment />} />
+          <Route path="/applications/mining-and-materials" element={<MiningAndMaterials />} />
+          <Route path="/applications/energy-intensive" element={<EnergyIntensive />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/research/:slug" element={<ArticlePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
