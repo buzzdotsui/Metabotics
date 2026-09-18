@@ -20,11 +20,12 @@ export default function EnergyIntensive() {
 
   return (
     <>
-      <section className="page-hero" id="energy-hero">
-        <div className="container">
+      <section className="page-hero" id="energy-hero" style={{ paddingBottom: '0', position: 'relative', overflow: 'hidden', minHeight: '400px', display: 'flex', alignItems: 'center' }}>
+        <div className="article-hero-bg" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1563884841777-70e61d8b1393?q=80&w=2072&auto=format&fit=crop)` }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="accent-line accent-line-center"></div>
-          <h1><span className="text-gradient">{ind.title}</span></h1>
-          <p>{ind.headline}</p>
+          <h1><span className="text-gradient" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>{ind.title}</span></h1>
+          <p style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{ind.headline}</p>
         </div>
       </section>
 

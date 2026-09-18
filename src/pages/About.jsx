@@ -39,13 +39,24 @@ export default function About() {
                 manufacturing.
               </p>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="card" style={{ padding: '40px', textAlign: 'center', maxWidth: '360px' }}>
-                <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
-                  <Globe className="w-12 h-12 text-accent-cyan" />
+            <div style={{ display: 'flex', alignItems: 'center', justifySelf: 'center', width: '100%', maxWidth: '500px' }}>
+              <div className="img-container" style={{ aspectRatio: '1', width: '100%' }}>
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Industrial robotics in manufacturing"
+                  className="img-cover"
+                  style={{ filter: 'brightness(0.7) contrast(1.1) hue-rotate(180deg) saturate(1.5)' }}
+                />
+                <div className="img-overlay-grid"></div>
+                <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div className="glass-panel" style={{ padding: '40px', textAlign: 'center', margin: '30px', background: 'rgba(10, 14, 23, 0.8)' }}>
+                    <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+                      <Globe className="w-12 h-12 text-accent-cyan" />
+                    </div>
+                    <h3 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>Africa-First Innovation</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Building technology for the unique challenges of emerging markets.</p>
+                  </div>
                 </div>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>Africa-First Innovation</h3>
-                <p>Building technology for the unique challenges and opportunities of industrial operations in emerging markets.</p>
               </div>
             </div>
           </div>

@@ -20,11 +20,12 @@ export default function HeatTreatment() {
 
   return (
     <>
-      <section className="page-hero" id="heat-hero">
-        <div className="container">
+      <section className="page-hero" id="heat-hero" style={{ paddingBottom: '0', position: 'relative', overflow: 'hidden', minHeight: '400px', display: 'flex', alignItems: 'center' }}>
+        <div className="article-hero-bg" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1598075308696-6e4facbaf7cd?q=80&w=2069&auto=format&fit=crop)` }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="accent-line accent-line-center"></div>
-          <h1><span className="text-gradient">{ind.title}</span></h1>
-          <p>{ind.headline}</p>
+          <h1><span className="text-gradient" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>{ind.title}</span></h1>
+          <p style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{ind.headline}</p>
         </div>
       </section>
 

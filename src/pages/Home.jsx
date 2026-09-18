@@ -105,10 +105,21 @@ export default function Home() {
               </div>
             </div>
             <div className="problem-visual">
-              <div className="problem-visual-inner">
-                <div className="problem-stat">
-                  <div className="stat-number">80%</div>
-                  <div className="stat-label">of African metallurgical operations lack real-time process intelligence</div>
+              <div className="img-container" style={{ aspectRatio: '4/5' }}>
+                <img 
+                  src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Traditional industrial foundry lacking modern tech"
+                  className="img-cover"
+                  style={{ filter: 'grayscale(60%) sepia(30%) hue-rotate(320deg) contrast(1.2)' }}
+                />
+                <div className="img-overlay-grid"></div>
+                <div style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
+                  <div className="glass-panel" style={{ padding: '24px', textAlign: 'center' }}>
+                    <div className="stat-number" style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-orange)' }}>80%</div>
+                    <div className="stat-label" style={{ fontSize: '0.9rem', color: 'var(--text-primary)', marginTop: '8px', fontWeight: 500 }}>
+                      of African metallurgical operations lack real-time process intelligence
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -224,18 +235,31 @@ export default function Home() {
           </div>
           <div className="applications-grid">
             {[
-              { icon: <Factory className="w-8 h-8" />, bg: 'var(--accent-orange-dim)', color: 'var(--accent-orange)', title: 'Steel & Foundries', desc: 'Optimize furnace operations, reduce energy waste, and improve casting quality through real-time monitoring and AI-driven control.' },
-              { icon: <Flame className="w-8 h-8" />, bg: 'var(--accent-cyan-dim)', color: 'var(--accent-cyan)', title: 'Heat Treatment Plants', desc: 'Control material microstructure precisely with intelligent heating and cooling cycles. Achieve consistent metallurgical properties.' },
-              { icon: <Pickaxe className="w-8 h-8" />, bg: 'rgba(139, 92, 246, 0.15)', color: 'var(--accent-purple)', title: 'Mining & Materials Processing', desc: 'Improve yield and reduce waste through predictive analytics and automated process adjustments in mineral processing operations.' },
-              { icon: <Thermometer className="w-8 h-8" />, bg: 'rgba(16, 185, 129, 0.15)', color: 'var(--accent-green)', title: 'Energy-Intensive Industries', desc: 'Monitor and optimize high-temperature operations to reduce energy consumption and carbon footprint across industrial processes.' },
+              { icon: <Factory className="w-8 h-8" />, bg: 'var(--accent-orange-dim)', color: 'var(--accent-orange)', title: 'Steel & Foundries', desc: 'Optimize furnace operations, reduce energy waste, and improve casting quality through real-time monitoring and AI-driven control.', image: 'https://images.unsplash.com/photo-1504938096384-e9102377c0bd?q=80&w=2070&auto=format&fit=crop' },
+              { icon: <Flame className="w-8 h-8" />, bg: 'var(--accent-cyan-dim)', color: 'var(--accent-cyan)', title: 'Heat Treatment Plants', desc: 'Control material microstructure precisely with intelligent heating and cooling cycles. Achieve consistent metallurgical properties.', image: 'https://images.unsplash.com/photo-1598075308696-6e4facbaf7cd?q=80&w=2069&auto=format&fit=crop' },
+              { icon: <Pickaxe className="w-8 h-8" />, bg: 'rgba(139, 92, 246, 0.15)', color: 'var(--accent-purple)', title: 'Mining & Materials Processing', desc: 'Improve yield and reduce waste through predictive analytics and automated process adjustments in mineral processing operations.', image: 'https://images.unsplash.com/photo-1588661706689-f542d992d9f6?q=80&w=2070&auto=format&fit=crop' },
+              { icon: <Thermometer className="w-8 h-8" />, bg: 'rgba(16, 185, 129, 0.15)', color: 'var(--accent-green)', title: 'Energy-Intensive Industries', desc: 'Monitor and optimize high-temperature operations to reduce energy consumption and carbon footprint across industrial processes.', image: 'https://images.unsplash.com/photo-1563884841777-70e61d8b1393?q=80&w=2072&auto=format&fit=crop' },
             ].map((app, i) => (
-              <div className="card application-card" key={i}>
-                <div className="app-icon" style={{ background: app.bg, color: app.color }}>{app.icon}</div>
-                <div>
-                  <h3>{app.title}</h3>
-                  <p>{app.desc}</p>
+              <Link to="/applications" key={i} style={{ textDecoration: 'none' }}>
+                <div className="card application-card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseOver={(e) => {e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.4)'}} onMouseOut={(e) => {e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-card)'}}>
+                  <div className="img-container" style={{ aspectRatio: '16/9', borderRadius: '0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <img 
+                      src={app.image} 
+                      alt={app.title}
+                      className="img-cover"
+                      style={{ filter: 'brightness(0.7)' }}
+                    />
+                    <div className="img-overlay-grid"></div>
+                    <div style={{ position: 'absolute', top: '20px', right: '20px', width: '48px', height: '48px', borderRadius: 'var(--radius-sm)', background: app.bg, color: app.color, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(8px)' }}>
+                      {app.icon}
+                    </div>
+                  </div>
+                  <div style={{ padding: '24px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--text-primary)' }}>{app.title}</h3>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: 0 }}>{app.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -49,13 +49,13 @@ export default function Navbar() {
             {navLinks.map(link => {
               if (link.label === 'Applications') {
                 return (
-                  <div 
-                    key={link.path} 
+                  <div
+                    key={link.path}
                     className="dropdown-container"
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <button 
+                    <button
                       className={`dropdown-trigger ${location.pathname.includes('/applications') ? 'active' : ''}`}
                       onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
@@ -72,7 +72,7 @@ export default function Navbar() {
                   </div>
                 )
               }
-              
+
               return (
                 <Link
                   key={link.path}

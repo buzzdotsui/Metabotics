@@ -61,6 +61,25 @@ export default function Technology() {
               )
             )}
           </div>
+
+          <div style={{ marginTop: '60px', display: 'flex', justifyContent: 'center' }}>
+            <div className="img-container" style={{ width: '100%', maxWidth: '800px', aspectRatio: '21/9' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" 
+                alt="Industrial edge computing server rack"
+                className="img-cover"
+                style={{ filter: 'brightness(0.6) contrast(1.2)' }}
+              />
+              <div className="img-overlay-grid"></div>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="glass-panel" style={{ padding: '24px 40px', textAlign: 'center', background: 'rgba(10, 14, 23, 0.8)' }}>
+                  <Network className="w-10 h-10 text-accent-cyan" style={{ margin: '0 auto 12px' }} />
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Edge-First Processing</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0 }}><span className="text-gradient" style={{ fontWeight: 600 }}>Zero latency.</span> Uninterrupted operation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

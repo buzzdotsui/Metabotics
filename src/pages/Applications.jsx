@@ -16,6 +16,7 @@ const industries = [
       'Casting quality prediction',
       'Automated slag management',
     ],
+    image: 'https://images.unsplash.com/photo-1504938096384-e9102377c0bd?q=80&w=2070&auto=format&fit=crop' // Steel/Foundry image
   },
   {
     icon: <Flame className="w-16 h-16" />,
@@ -31,6 +32,7 @@ const industries = [
       'Hardness and tensile strength forecasting',
       'Batch consistency monitoring',
     ],
+    image: 'https://images.unsplash.com/photo-1598075308696-6e4facbaf7cd?q=80&w=2069&auto=format&fit=crop' // Heat treatment/glowing metal image
   },
   {
     icon: <Pickaxe className="w-16 h-16" />,
@@ -46,6 +48,7 @@ const industries = [
       'Tailings management intelligence',
       'Water and energy use reduction',
     ],
+    image: 'https://images.unsplash.com/photo-1588661706689-f542d992d9f6?q=80&w=2070&auto=format&fit=crop' // Mining/heavy machinery image
   },
   {
     icon: <Thermometer className="w-16 h-16" />,
@@ -61,6 +64,7 @@ const industries = [
       'Predictive equipment maintenance',
       'Process parameter auto-tuning',
     ],
+    image: 'https://images.unsplash.com/photo-1563884841777-70e61d8b1393?q=80&w=2072&auto=format&fit=crop' // Factory/energy plant image
   },
 ]
 
@@ -99,19 +103,37 @@ export default function Applications() {
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{
+                <div className="img-container" style={{
                   width: '100%',
-                  maxWidth: '320px',
-                  aspectRatio: '1',
-                  borderRadius: 'var(--radius-lg)',
-                  background: ind.bg,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '6rem',
-                  border: `1px solid ${ind.color}33`,
+                  maxWidth: '480px',
+                  aspectRatio: '4/3',
+                  borderRadius: 'var(--radius-lg)'
                 }}>
-                  {ind.icon}
+                  <img 
+                    src={ind.image} 
+                    alt={ind.title}
+                    className="img-cover"
+                    style={{ filter: 'brightness(0.75) contrast(1.1)' }}
+                  />
+                  <div className="img-overlay-grid"></div>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '24px', 
+                    right: '24px',
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: 'var(--radius-md)',
+                    background: ind.bg,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: `1px solid ${ind.color}55`,
+                    color: ind.color,
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: 'var(--shadow-card)'
+                  }}>
+                    {ind.icon}
+                  </div>
                 </div>
               </div>
             </div>
