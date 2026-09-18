@@ -98,7 +98,7 @@ export default function About() {
           </div>
           <div className="founder-grid">
             <div className="founder-photo">
-              <img src="/founder.jpg" alt="Testimony Owolabi Ifeoluwa" />
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" alt="Testimony Owolabi Ifeoluwa" />
             </div>
             <div className="founder-info">
               <h3>Testimony Owolabi Ifeoluwa</h3>
