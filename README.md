@@ -1,95 +1,101 @@
-<div align="center">
-  <h3>Building the Future of Smart Manufacturing in Africa</h3>
-  <p>A deep-tech industrial startup website for precision metallurgical intelligence and automation.</p>
-</div>
+# Metabotics — Software for the Physical World
 
-## 🌐 Overview
+Production-ready website for Metabotics, built with Next.js 14, TypeScript, and a custom design system.
 
-**Metabotics** builds smart monitoring and control systems that transform furnaces, heat treatment, and industrial processes into self-optimizing systems. 
+## Tech Stack
 
-This repository contains the front-end codebase for the official Metabotics website. Designed to embody a premium, "deep-tech" aesthetic, the site communicates the company’s vision of bringing Industry 4.0 and AI-driven process intelligence to materials processing in emerging markets.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: CSS Variables + CSS Modules (design token driven)
+- **Animation**: Framer Motion (minimal, for system diagrams)
+- **Forms**: React Hook Form + Zod validation
+- **Testing**: Vitest + Playwright
+- **Deployment**: Vercel
 
-## ✨ Key Features
+## Design System
 
-- **Industrial Design System**: A custom-built, moody UI aesthetic utilizing deep navy/charcoal bases, electric cyan glows, and molten orange highlights to represent extreme heat and precise technology.
-- **Glassmorphism & Micro-animations**: Smooth hover states, glowing borders, and particle animations that bring static industrial concepts to life.
-- **Comprehensive Content Architecture**: 
-  - **Home**: A 12-section landing page detailing the problem, solution, tech stack, $1B market opportunity, pilot projects, and founder vision.
-  - **Technology**: Deep-dives into the Hardware, Software, and Integration layers.
-  - **Applications**: Industry-specific use cases (Steel/Foundries, Heat Treatment, Mining, Energy).
-  - **Research Engine**: A blog/insights hub establishing thought leadership in industrial IoT and AI.
-  - **About & Contact**: Mission, values, timeline, and partnership funnels.
+The visual identity is monochrome-first:
+- Black / White / Grayscale
+- Technical typography (Space Grotesk, Inter, IBM Plex Mono)
+- System diagrams as primary visual language
+- Industrial photography
+- Restrained motion
 
-## 🛠️ Tech Stack
+## Getting Started
 
-- **Framework**: React 18
-- **Build Tool**: Vite (Lightning-fast HMR and optimized production builds)
-- **Routing**: React Router DOM v6
-- **Styling**: Pure CSS3 with custom variables (`index.css`) — *No external UI libraries or utility frameworks were used, ensuring complete control over the bespoke animations and design system.*
-- **Typography**: Google Fonts (Inter for clean body copy, Orbitron for tech-focused headings)
+```bash
+# Install dependencies
+pnpm install
 
-## 🚀 Getting Started
+# Development server
+pnpm dev
 
-To run the Metabotics website locally:
+# Production build
+pnpm build
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn
+# Start production server
+pnpm start
 
-### Installation
+# Linting
+pnpm lint
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/metabotics-web.git
-   cd metabotics-web
-   ```
+# Type checking
+pnpm typecheck
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Tests
+pnpm test
+pnpm e2e
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **View the site**
-   Open `http://localhost:5173` in your browser.
-
-## 🏗️ Project Structure
-
-```text
-metabotics/
-├── public/                 # Static assets (Hero background, Founder image)
-├── src/
-│   ├── components/         # Reusable UI components
-│   │   ├── Navbar.jsx      # Sticky, responsive navigation
-│   │   ├── Footer.jsx      # Multi-column site footer
-│   │   └── ScrollToTop.jsx # Route transition helper
-│   ├── pages/              # Individual route views
-│   │   ├── Home.jsx        # Landing page
-│   │   ├── Technology.jsx  # Tech stack details
-│   │   ├── Applications.jsx# Industry use cases
-│   │   ├── Research.jsx    # Blog/Insights listing
-│   │   ├── About.jsx       # Company info & timeline
-│   │   └── Contact.jsx     # Partnership forms
-│   ├── App.jsx             # Route definitions
-│   ├── main.jsx            # Application entry point
-│   └── index.css           # Global design system & animations
-├── index.html              # HTML template
-├── package.json            # Dependencies & scripts
-└── vite.config.js          # Vite configuration
+# Formatting
+pnpm format
 ```
 
-## 🤝 Partnerships matrix
+## Project Structure
 
-The platform is designed to attract specific collaborative opportunities:
-- **Industrial Partnerships**: Operations and factories ready to optimize.
-- **Pilot Projects**: Testing the technology in live facilities.
-- **Research Collaborations**: Academic and R&D synergy.
-- **Investment**: Backing deep-tech innovation in Africa.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Homepage
+│   ├── technology/        # Technology page
+│   ├── applications/      # Applications index + detail pages
+│   ├── research/          # Research index + article pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── api/               # API routes
+│   ├── layout.tsx         # Root layout
+│   ├── globals.css        # Global styles
+│   ├── sitemap.ts         # Sitemap generation
+│   └── robots.ts          # Robots.txt generation
+├── components/
+│   ├── ui/                # Foundation components
+│   ├── layout/            # Global layout components
+│   ├── hero/              # Hero component
+│   ├── diagrams/          # Technical visualization
+│   ├── applications/      # Application components
+│   ├── research/          # Research components
+│   ├── contact/           # Contact form
+│   └── sections/          # Composable page sections
+├── data/                  # Content separation
+├── lib/                   # Utilities, validation, SEO
+└── styles/                # Design tokens, global styles, typography
+```
 
-## 📝 License
+## Key Features
 
-Copyright &copy; 2026 Metabotics. All Rights Reserved.
+- **11 Routes**: Home, Technology, Applications (4), Research (index + articles), About, Contact, 404
+- **Design System**: 15+ reusable components with consistent tokens
+- **Technical Diagrams**: SystemDiagram, ProcessFlow, DataVisualization with animations
+- **Accessibility**: WCAG AA compliant, keyboard navigation, screen reader support
+- **SEO**: Complete metadata, Open Graph, sitemap, robots.txt
+- **Performance**: Optimized images, self-hosted fonts, minimal JS
+- **Security**: Server-side validation, rate limiting ready, no client secrets
+
+## Documentation
+
+See `docs/` for complete specifications:
+- `01-SITE-ARCHITECTURE.md` — Information architecture
+- `02-DESIGN-SYSTEM.md` — Visual language
+- `03-PAGE-LAYOUTS.md` — Page compositions
+- `04-COMPONENT-SPECIFICATION.md` — Component contracts
+- `05-IMPLEMENTATION-PLAN.md` — Build sequence
+- `06-REPOSITORY-AUDIT.md` — Repository state

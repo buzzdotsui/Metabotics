@@ -1,0 +1,22 @@
+.base {
+  display: grid;
+}
+
+.gapSmall {
+  gap: var(--grid-gap-mobile);
+}
+
+.gapDefault {
+  gap: var(--grid-gap);
+}
+
+.gapLarge {
+  gap: var(--grid-gap-lg);
+}
+
+@media (max-width: 767px) {
+  .gapDefault,
+  .gapLarge {
+    gap: var(--grid-gap-mobile);
+  }
+}

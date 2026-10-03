@@ -1,0 +1,44 @@
+.base {
+  padding-block: var(--section-space);
+}
+
+.default {
+  padding-block: var(--section-space);
+}
+
+.large {
+  padding-block: var(--section-space-large);
+}
+
+.medium {
+  padding-block: var(--section-space-medium);
+}
+
+.dark {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.light {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.labelWrapper {
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 767px) {
+  .base,
+  .default {
+    padding-block: var(--section-space-mobile);
+  }
+
+  .large {
+    padding-block: calc(var(--section-space-mobile) + var(--space-5));
+  }
+
+  .medium {
+    padding-block: var(--section-space-medium);
+  }
+}

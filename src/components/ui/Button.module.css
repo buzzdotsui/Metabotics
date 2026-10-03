@@ -1,0 +1,123 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding-inline: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.base:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.arrow {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.base:hover .arrow,
+.base:focus-visible .arrow {
+  transform: translateX(4px);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.primary:hover:not(.disabled) {
+  background-color: var(--color-white-pure);
+  border-color: var(--color-white-pure);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-gray-700);
+}
+
+.secondary:hover:not(.disabled) {
+  border-color: var(--color-white);
+  color: var(--color-white-pure);
+}
+
+.light {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.light:hover:not(.disabled) {
+  background-color: var(--color-black-deep);
+  border-color: var(--color-black-deep);
+}
+
+.text {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: transparent;
+  padding-inline: 0;
+  min-height: 44px;
+}
+
+.text:hover:not(.disabled) {
+  opacity: 0.7;
+}
+
+/* Sizes */
+.default {
+  min-height: 48px;
+  padding-inline: 20px;
+  font-size: 0.75rem;
+}
+
+.large {
+  min-height: 56px;
+  padding-inline: 24px;
+  font-size: 0.8125rem;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .default {
+    min-height: 52px;
+  }
+
+  .large {
+    min-height: 60px;
+  }
+
+  .text {
+    min-height: 48px;
+  }
+}

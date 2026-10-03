@@ -1,0 +1,30 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heading {
+  margin-bottom: var(--space-6);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  color: var(--color-text-tertiary);
+}
+
+.empty p:first-child {
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 767px) {
+  .heading {
+    margin-bottom: var(--space-4);
+  }
+}

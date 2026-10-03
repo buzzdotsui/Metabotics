@@ -1,0 +1,187 @@
+/* ==========================================================================
+   METABOTICS — TYPOGRAPHY
+   ========================================================================== */
+
+@import './tokens.css';
+
+/* ─── Responsive Typography ─────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  :root {
+    --text-hero: clamp(3rem, 15vw, 4.5rem);
+    --text-page-title: clamp(2.5rem, 12vw, 4rem);
+    --text-section: clamp(2rem, 10vw, 3rem);
+  }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl); }
+  h5 { font-size: var(--text-lg); }
+  h6 { font-size: var(--text-base); }
+}
+
+/* ─── Heading Variants ──────────────────────────────────────────────── */
+
+.heading-hero {
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-display);
+  max-width: var(--content-max);
+}
+
+.heading-page {
+  font-size: var(--text-page-title);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-display);
+  max-width: var(--content-max);
+}
+
+.heading-section {
+  font-size: var(--text-section);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-snug);
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-display);
+  max-width: var(--content-max);
+}
+
+/* ─── Body Variants ─────────────────────────────────────────────────── */
+
+.body-large {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  max-width: var(--reading-max);
+}
+
+.body-base {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  max-width: var(--reading-max);
+}
+
+.body-small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  max-width: var(--reading-max);
+}
+
+/* ─── Technical Text ────────────────────────────────────────────────── */
+
+.technical-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-technical);
+}
+
+.technical-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-normal);
+}
+
+.technical-number--large {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+.metadata {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+/* ─── Link Styles ───────────────────────────────────────────────────── */
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.link__arrow {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.link:hover .link__arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Lists ─────────────────────────────────────────────────────────── */
+
+.technical-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.technical-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.technical-list__item:last-child {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.technical-list__number {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-technical);
+  min-width: 2.5rem;
+}
+
+.technical-list__content {
+  flex: 1;
+}
+
+.technical-list__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-1);
+}
+
+.technical-list__description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: none;
+}

@@ -1,0 +1,27 @@
+.container {
+  margin-inline: auto;
+}
+
+.base {
+  width: min(calc(100% - 96px), var(--container-max));
+}
+
+.container {
+  width: min(calc(100% - 96px), var(--container-max));
+}
+
+.containerWide {
+  width: min(calc(100% - 96px), var(--container-max));
+}
+
+.containerReading {
+  width: min(100%, var(--reading-max));
+}
+
+@media (max-width: 767px) {
+  .base,
+  .container,
+  .containerWide {
+    width: min(calc(100% - 40px), var(--container-max));
+  }
+}
