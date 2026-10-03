@@ -6,17 +6,19 @@ import { FeatureSection } from '@/components/sections/FeatureSection';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { ContactFormValues } from '@/components/contact/ContactForm';
 
-function handleSubmit(values: ContactFormValues) {
-  return new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      console.log('Form submitted:', values);
-      if (Math.random() > 0.1) {
-        resolve();
-      } else {
-        reject(new Error('Network error. Please try again.'));
-      }
-    }, 1500);
+async function handleSubmit(values: ContactFormValues) {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(values),
   });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.error || errorData.details || 'Submission failed. Please try again.');
+  }
 }
 
 export default function ContactPage() {

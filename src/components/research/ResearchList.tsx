@@ -26,7 +26,7 @@ export function ResearchList({ items, variant = 'default', className, heading }:
     <div className={`${styles.list} ${className || ''}`}>
       {heading && <div className={styles.heading}>{heading}</div>}
       <div className={styles.rows} role="list" aria-label="Research publications">
-        {items.map((item, index) => (
+        {items.map((item, _index) => (
           <ResearchRow key={item.slug} item={item} variant={variant} />
         ))}
       </div>

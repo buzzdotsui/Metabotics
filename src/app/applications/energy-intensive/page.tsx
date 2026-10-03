@@ -7,7 +7,6 @@ import { ProcessFlow } from '@/components/diagrams/ProcessFlow';
 import { SystemDiagram } from '@/components/diagrams/SystemDiagram';
 import { CTASection } from '@/components/sections/CTASection';
 import { applications } from '@/data/applications';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Energy-Intensive Industries — Metabotics Applications',

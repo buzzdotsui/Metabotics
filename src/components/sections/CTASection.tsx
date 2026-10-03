@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, LinkButton } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 import styles from './CTASection.module.css';
 
 interface CTASectionProps {

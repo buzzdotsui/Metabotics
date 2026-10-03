@@ -1,6 +1,6 @@
 'use client';
 
-import { RefObject, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './DataVisualization.module.css';
 
 export interface DataPoint {

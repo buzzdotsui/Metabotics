@@ -3,7 +3,6 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Hero } from '@/components/hero/Hero';
 import { FeatureSection } from '@/components/sections/FeatureSection';
 import { CTASection } from '@/components/sections/CTASection';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About Metabotics — Intelligent Industrial Technology',

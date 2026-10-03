@@ -5,7 +5,6 @@ import { FeatureSection } from '@/components/sections/FeatureSection';
 import { ResearchList } from '@/components/research/ResearchList';
 import { CTASection } from '@/components/sections/CTASection';
 import { researchItems } from '@/data/research';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Metabotics Research — Industrial AI, Automation & Digital Twins',

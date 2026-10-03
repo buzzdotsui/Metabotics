@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Button, LinkButton } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 import { MobileNavigation } from './MobileNavigation';
 import styles from './SiteHeader.module.css';
 import { navigation } from '@/data/navigation';

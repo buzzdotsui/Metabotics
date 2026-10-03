@@ -9,7 +9,6 @@ import { CTASection } from '@/components/sections/CTASection';
 import { applications } from '@/data/applications';
 import { researchItems } from '@/data/research';
 import { systemStages } from '@/data/technology';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Metabotics — Software for the Physical World',

@@ -26,7 +26,7 @@ export function ApplicationList({ applications, variant = 'default', className, 
     <div className={`${styles.list} ${className || ''}`}>
       {heading && <div className={styles.heading}>{heading}</div>}
       <div className={styles.rows} role="list" aria-label="Applications">
-        {applications.map((app, index) => (
+        {applications.map((app, _index) => (
           <ApplicationRow key={app.slug} application={app} variant={variant} />
         ))}
       </div>

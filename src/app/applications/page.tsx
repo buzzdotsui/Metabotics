@@ -5,7 +5,6 @@ import { FeatureSection } from '@/components/sections/FeatureSection';
 import { ApplicationList } from '@/components/applications/ApplicationList';
 import { CTASection } from '@/components/sections/CTASection';
 import { applications } from '@/data/applications';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Metabotics Applications — Intelligent Industrial Systems',

@@ -1,6 +1,5 @@
 'use client';
 
-import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { SystemNode } from './SystemNode';
 import styles from './SystemDiagram.module.css';

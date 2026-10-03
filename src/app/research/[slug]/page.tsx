@@ -4,7 +4,6 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Hero } from '@/components/hero/Hero';
 import { FeatureSection } from '@/components/sections/FeatureSection';
 import { researchItems } from '@/data/research';
-import Image from 'next/image';
 
 interface ResearchArticlePageProps {
   params: Promise<{ slug: string }>;

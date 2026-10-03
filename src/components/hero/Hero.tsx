@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import Image from 'next/image';
-import { Button, LinkButton } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 import { SystemDiagram } from '@/components/diagrams/SystemDiagram';
 import styles from './Hero.module.css';
 import { systemStages } from '@/data/technology';

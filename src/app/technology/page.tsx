@@ -3,10 +3,8 @@ import { PageShell } from '@/components/layout/PageShell';
 import { Hero } from '@/components/hero/Hero';
 import { FeatureSection } from '@/components/sections/FeatureSection';
 import { SystemDiagram } from '@/components/diagrams/SystemDiagram';
-import { ProcessFlow } from '@/components/diagrams/ProcessFlow';
 import { CTASection } from '@/components/sections/CTASection';
 import { technologyLayers, hardwareIntegrations, softwareLayers, integrationProtocols } from '@/data/technology';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Metabotics Technology — Industrial Intelligence Infrastructure',
